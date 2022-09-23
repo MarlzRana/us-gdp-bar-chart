@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #606c5a;
+}
+
+.graph-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  background-color: #9e9f9a;
+}
+.graph-container > h1 {
+  font-weight: 500;
+}
+.graph-container > svg {
+  width: 1000px;
+  aspect-ratio: 16/10;
+}
+.graph-container > svg > rect {
+  fill: #4c5c4c;
+}
+.graph-container > p {
+  margin-left: auto;
+}
+.graph-container > p > a {
+  color: black;
+}
+
+#tooltip {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  padding: 5px;
+  background-color: #9e9f9a;
+  border: 2px solid #83786f;
+  border-radius: 5px;
+  pointer-events: none;
+}

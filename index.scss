@@ -1,0 +1,79 @@
+//Color palette: https://coolors.co/4c5c4c-606c5a-83786f-918c84-9e9f9a
+//Font imports
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+
+//SCSS global variables
+$page-background-color: #606c5a;
+$graph-container-backgroud-color: #9e9f9a;
+$graph-bar-fill-color: #4c5c4c;
+$tooltip-background-color: #9e9f9a;
+$tooltip-border-color: #83786f;
+
+//SCSS Mixins
+@mixin flex-row {
+  display: flex;
+}
+
+@mixin flex-row-center {
+  @include flex-row;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-column-center {
+  @include flex-column;
+  justify-content: center;
+  align-items: center;
+}
+
+//SCSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+
+body {
+  @include flex-row-center;
+  height: 100vh;
+  width: 100vw;
+  background-color: $page-background-color;
+}
+
+.graph-container {
+  @include flex-column-center;
+  padding: 25px;
+  background-color: $graph-container-backgroud-color;
+  > h1 {
+    font-weight: 500;
+  }
+  > svg {
+    width: 1000px;
+    aspect-ratio: 16/10;
+    > rect {
+      fill: $graph-bar-fill-color;
+    }
+  }
+  > p {
+    margin-left: auto;
+    > a {
+      color: black;
+    }
+  }
+}
+
+#tooltip {
+  @include flex-column-center;
+  position: absolute;
+  padding: 5px;
+  background-color: $tooltip-background-color;
+  border: 2px solid $tooltip-border-color;
+  border-radius: 5px;
+  pointer-events: none;
+}
